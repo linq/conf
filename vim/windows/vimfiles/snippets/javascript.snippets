@@ -1,0 +1,79 @@
+snippet / 单行注释
+	// ${1}
+snippet // 多行注释
+	/* ${1}*/
+snippet use 严格模式
+	"use strict";
+	${1}
+snippet f 常规函数
+	function ${1:f_name}(${2})
+	{
+	  ${3}
+	}
+snippet ff 单行匿名函数
+	function (${1}) {${2}}
+snippet wi
+	with(${1}){
+	  ${2}
+	}
+snippet if
+	if(${1}){
+	  ${2}
+	}
+snippet elif
+	else if(${1}){
+	  ${2}
+	}
+snippet el
+	else{${1}
+	}
+snippet for
+	for(${1}){
+	  ${2}
+	}
+snippet wh
+	while(${1}){
+	  ${2}
+	}
+snippet do
+	do {${2}
+	} while(${1});
+snippet sw
+	switch(${1}){
+	  ${2}
+	}
+snippet cs
+	case ${1}:
+	  ${2}
+# 单个关键字
+snippet co 继续
+	continue;${1}
+snippet br 中断
+	break;${1}
+snippet re 返回
+	return ${1};${2}
+snippet de 删除
+	delete ${1}
+snippet pt 原型
+	prototype${1}
+snippet tp
+	typeof${1}
+snippet p 常用输出
+	document.writeln(${1});${2}
+snippet al
+	alert(${1});${2}
+snippet len 获取字符串长度
+	length${1}
+snippet .
+	this${1}
+# 常用函数
+snippet toS 转换为字符串
+	toString(${1});
+snippet isF 判断是否在可以表示的数值范围以内
+	isFinite(${1});
+snippet isN 判断是否为非数值
+	isNaN(${1});
+snippet paI 转换为整数
+	parseInt(${1});
+snippet paF 转换为浮点数
+	parseFloat(${1});

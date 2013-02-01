@@ -1,0 +1,202 @@
+snippet #
+	#!/usr/bin/env ruby
+	# encoding: utf-8
+	${1}
+snippet =b 多行注释
+	=begin
+	${1}
+	=end
+snippet / 正则匹配
+	/${1}/${2}
+# 包含指令
+snippet in 包含模块（类包含）
+	include ${1}
+snippet ex 包含模块（单例包含）
+	extend(${1})${2}
+snippet rq 包含文件，只加载一次，常用于加载库文件
+	require "${1}"${2}
+snippet ld 包含文化，可加载多次，常用于加载配置文件
+	load "${1}.rb"${2}
+# 模块、类
+snippet mo 模块定义
+	module ${1:m_name}
+
+	  ${2}
+	
+	end  # module
+snippet cl 类定义
+	class ${1:cl_name}
+
+	  ${2}
+	
+	end  # class
+# 字符串、代码块
+snippet q 相当于单引号字符串
+	%q[${1}]${2}
+snippet Q 相当于双引号字符串
+	%Q[${1}]${2}
+snippet R
+	%R{${1}}${2}
+snippet w 字符串数组
+	%w{${1}}${2}
+snippet str 多行字符串
+	<<${1:EOF}
+	${2}
+	$1
+# 方法
+snippet d 不带参数
+	def ${1:f_name}
+	  ${2}
+	end  # function
+snippet d. 带参数
+	def ${1:f_name}(${2})
+	  ${3}
+	end  # function
+snippet ud 销毁方法
+	undef :${1}
+snippet di 构造方法（不带参数）
+	def initialize
+	  ${1}
+	end  # initialize
+snippet di. 构造方法（带参数）
+	def initialize(${1})
+	  ${2}
+	end  # initialize
+snippet at_w
+	attr_writer :${1}
+snippet at_r
+	attr_reader :${1}
+snippet at_a
+	attr_accessor :${1}
+snippet la 匿名函数
+	lambda${1}
+# 流程控制
+snippet if if
+	if ${1}
+	  ${2}
+	end  # if
+snippet elif
+	elsif ${1}
+	  ${2}
+snippet el
+	else
+	  ${1}
+snippet ul uless
+	unless ${1}
+	  ${2}
+	end  # unless
+snippet th
+	then
+	  ${1}
+snippet for
+	for ${1} in ${2}
+	  ${3}
+	end  # for
+snippet wh
+	while ${1}
+	  ${2}
+	end  # while
+snippet ut
+	until ${1}
+	  ${2}
+	end  # until
+snippet lo
+	loop do
+	  ${1}
+	end  # loop
+snippet cs
+	case ${1}
+	  ${2}
+	end
+snippet do 无参数
+	do
+	  ${1}
+	end  # do
+snippet do. 有参数
+	do ${1}
+	  ${2}
+	end  # do
+snippet br 跳出当前循环体
+	break${1}
+snippet ne 忽略本轮循环的剩余部分，继续下一轮循环
+	next${1}
+snippet rd 重新开始本轮循环
+	redo${1}
+snippet rt 重新开始执行当前迭代
+	retry${1}
+# 迭代器
+snippet e
+	each do |${1}|
+	  ${2}
+	end
+snippet e_i
+	each_index do |${1}|
+	  ${2}
+	end
+snippet e_b
+	each_byte do |${1}|
+	  ${2}
+	end
+snippet e_c
+	each_char do |${1}|
+	  ${2}
+	end
+snippet e_l
+	each_line do |${1}|
+	  ${2}
+	end
+snippet e_wi
+	each_with_index do |${1}|
+	  ${2}
+	end
+snippet tm
+	times do
+	  ${1}
+	end  # times
+# 异常处理
+snippet be
+	begin
+	  ${1}
+	end  # begin
+snippet rs
+	raise ${1}
+snippet res
+	rescue ${1}
+snippet ens
+	ensure${1}
+# 单个关键字
+snippet pu 公有
+	public :${1}
+snippet pu. 公有（换行）
+	public
+	${1}
+snippet po 保护
+	protected :${1}
+snippet po. 保护（换行）
+	protected
+	${1}
+snippet pr 私有
+	private :${1}
+snippet pr. 私有（换行）
+	private
+	${1}
+snippet re 返回
+	return ${1}
+snippet yi 返回但不退出、执行代码块
+	yield ${1}
+snippet rev
+	reverse${1}
+snippet sp
+	super${1}
+snippet al 别名
+	alias ${1}
+snippet s
+	self${1}
+snippet p 自动换行
+	puts ${1}
+snippet p. 不自动换行
+	print ${1}
+snippet |
+	|${1}| ${2}
+snippet .
+	=> ${1}

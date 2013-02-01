@@ -1,0 +1,17 @@
+snippet gtk2 for GTK+ 2.0
+	FLAGS = $(shell pkg-config --cflags --libs gtk+-2.0)
+	
+	all:
+		clang -std=c99 -o app *.c ${FLAGS}${1}
+snippet gtk3 for GTK+ 3.0
+	FLAGS = $(shell pkg-config --cflags --libs gtk+-3.0)
+	
+	all:
+		clang -std=c99 -o app *.c ${FLAGS}${1}
+snippet all
+	all:
+		${1}
+snippet cl 清除
+	.PHONY: clean
+	clean:
+		${1}

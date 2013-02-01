@@ -1,0 +1,150 @@
+snippet / 单行注释
+	// ${1}
+snippet // 多行注释
+	/* ${1}*/
+# 函数
+snippet main 主函数
+	int
+	main(int argc, char *argv[])
+	{
+	  ${1}
+
+	  return 0;
+	}  // main
+snippet f 函数定义
+	${1:void}
+	${2:f_name}(${3})
+	{
+	  ${4}
+	}  // $2
+snippet fd 函数声明
+	${1:void} ${2:f_name}(${3});${4}
+# 预处理
+snippet in 包含系统头文件
+	#include <${1}>${2}
+snippet in. 包含自定义头文件
+	#include "${1}.h"${2}
+snippet ins 包含标准输入输出头文件
+	#include <stdio.h>${1}
+snippet df 宏定义
+	#define 
+snippet ifdf 包含了指定头文件时的处理方式
+	#ifdef ${1}
+	${2}
+	#endif
+snippet ifndf 防止头文件重复包含
+	#ifndef _HEAD_${1:}_H_
+	#define _HEAD_$1_H_
+
+	${2}
+
+	#endif
+# 复合类型
+snippet str 结构体定义
+	struct ${1:st_name}{
+	  ${2}
+	};
+snippet uni 共用体
+	union ${1:uni_name}{
+	  ${2}
+	};
+snippet enu 枚举定义
+	enum ${1:e_name}{${2}};${3}
+snippet tp 类型定义
+	typedef ${1}
+snippet tps
+	typedef struct${1}{
+	  ${2}
+	} ${3:st_name};${4}
+snippet tpu
+	typedef union${1}{
+	  ${2}
+	} ${3:uni_name};${4}
+snippet tpe
+	typedef enum${1}{
+	  ${2}
+	} ${3:e_name};${4}
+# 流程控制
+snippet if
+	if(${1}){
+	  ${2}
+	}
+snippet elif
+	else if(${1}){
+	  ${2}
+	}
+snippet el
+	else{
+	  ${1}
+	}
+snippet for
+	for(${1}){
+	  ${2}
+	}  // for
+snippet ff 常用版
+	for(${1}; ${2}; ${3}){
+	  ${4}
+	}  // for
+snippet wh
+	while(${1}){
+	  ${2}
+	}  // while
+snippet do
+	do{
+	  ${2}
+	} while(${1});
+snippet sw switch
+	switch(${1}){
+	  ${2}
+	}  // switch
+snippet cs case
+	case ${1}:
+	  ${2}
+snippet def default
+	default:
+	  ${1}
+# 输入输出
+snippet p 输出
+	printf("${1}"${2});${3}
+snippet s 输入
+	scanf("${1}", ${2});${3}
+snippet spr
+	sprintf(${1:stderr}, "${2:%s}", ${3});
+snippet fpr
+	fprintf(${1:stderr}, "${2:%s}"${3});
+# 单个关键字
+snippet un
+	unsigned ${1}
+snippet re
+	return ${1};${2}
+snippet st
+	static ${1}
+snippet con 常量声明
+	const ${1}
+snippet reg 寄存器变量
+	register ${1}
+snippet vol 声明值有可能不受编译器控制
+	volatile ${1}
+snippet inl 内联函数
+	inline ${1}
+snippet res 声明指针是访问其所指对象的唯一方式
+	restrict ${1}
+snippet ext 声明外部变量
+	extern ${1}
+snippet g 无条件跳转
+	goto ${1}
+snippet co
+	continue;${1}
+snippet br
+	break;${1}
+snippet sz 计算占用的内存大小
+	sizeof(${1})${2}
+snippet ex 返回状态码
+	exit(${1:0});${2}
+snippet .
+	->${1}
+# 常用写法
+snippet rpl 互换两变量的值
+	${1:a} ^= ${2:b};
+	$2 ^= $1;
+	$1 ^= $2;${3}
