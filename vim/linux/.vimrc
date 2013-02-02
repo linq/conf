@@ -76,10 +76,8 @@
 au FileType c set makeprg=gcc\ %
 
 
-set background=dark
-colorscheme solarized
-"colorscheme elflord          " 着色模式：黄色和粉红色为主
-set guifont=Monaco:h10       " 字体 && 字号
+colorscheme desert          " 着色模式：黄色和粉红色为主
+set guifont=Monaco\ 10       " 字体 && 字号
 set backspace=2              " 设置退格键可用
 set autoindent               " 自动对齐
 set ai!                      " 设置自动缩进
@@ -94,6 +92,7 @@ set hlsearch                 " 开启高亮显示结果
 set nowrapscan               " 搜索到文件两端时不重新搜索
 set nocompatible             " 关闭兼容模式
 set vb t_vb=                 " 关闭提示音
+au GuiEnter * set t_vb=
 set hidden                   " 允许在有未保存的修改时切换缓冲区
 set autochdir                " 设定文件浏览器目录为当前目录
 set foldmethod=syntax        " 选择代码折叠类型
@@ -124,6 +123,18 @@ au BufRead,BufNewFile *.s,*.c,*.cpp,*.h,*.cl,*.rb,*.sql,*.sh,*.vim,*.js,*.css,*.
 set fenc=utf-8
 set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
+
+if has("gui_running")
+    winpos 235 235            " 指定窗口出现的位置，坐标原点在屏幕左上角
+    set lines=30 columns=150 " 指定窗口大小，lines为高度，columns为宽度
+    set guioptions-=m       " 隐藏菜单栏
+
+    set guioptions-=T        " 隐藏工具栏
+    set guioptions-=L       " 隐藏左侧滚动条
+    set guioptions-=r       " 隐藏右侧滚动条
+    set guioptions-=b       " 隐藏底部滚动条
+    set showtabline=0       " 隐藏Tab栏
+endif
 
 
 " ======= 引号 && 括号自动匹配 ======= "
@@ -167,6 +178,7 @@ let g:miniBufExplMapWindowNavVim=1
 let g:miniBufExplMapWindowNavArrows=1
 let g:miniBufExplMapCTabSwitchBufs=1
 let g:miniBufExplModSelTarget=1
+let g:miniBufExplorerMoreThanOne=0
 
 " :Tlist              调用TagList
 let Tlist_Show_One_File=1                    " 只显示当前文件的tags
@@ -176,57 +188,3 @@ let Tlist_File_Fold_Auto_Close=1             " 自动折叠
 
 " :LoadTemplate       根据文件类型自动加载模板
 let g:template_path='~/.vim/template/'
-
-" snipMate            Tab智能补全
-let g:snips_author='LinQ'
-
-" :AuthorInfoDetect   自动添加作者、时间等信息，本质是NERD_commenter && authorinfo的结合
-let g:vimrc_author='LinQ'
-let g:vimrc_email='fancylinq@163.com'
-let g:vimrc_homepage='#'
-
-" Ctrl + H            将光标移到当前行的行首
-imap <c-h> <ESC>I
-
-" Ctrl + J            将光标移到下一行的行首
-imap <c-j> <ESC>jI
-
-" Ctrl + K            将光标移到上一行的末尾
-imap <c-k> <ESC>kA
-
-" Ctrl + L            将光标移到当前行的行尾
-imap <c-l> <ESC>A
-
-" Ctrl + E            一步加载语法模板和作者、时间信息
-map <c-e> <ESC>:LoadTemplate<CR><ESC>:AuthorInfoDetect<CR><ESC>Gi
-imap <c-e> <ESC>:LoadTemplate<CR><ESC>:AuthorInfoDetect<CR><ESC>Gi
-vmap <c-e> <ESC>:LoadTemplate<CR><ESC>:AuthorInfoDetect<CR><ESC>Gi
-
-" jj                  保存当前文件并留在插入模式      [插入模式]
-imap jj <ESC>:w<CR>li
-
-" kk                  返回Normal模式，不执行保存      [插入模式]
-imap kk <ESC>l
-
-" nt                  打开NERDTree窗口，在左侧栏显示  [非插入模式]
-map nt :NERDTree<CR>
-
-" tl                  打开Taglist窗口，在右侧栏显示   [非插入模式]
-map tl :Tlist<CR><c-l>
-
-
-" ======= 编译 && 运行 ======= "
-
-" 编译源文件
-func! CompileCode()
-        exec "w"
-        if &filetype == "c"
-            exec "!cc -std=c99 %<.c -o %<"
-        elseif &filetype == "cpp"
-            exec "!clang++ -std=c++98 %<.cpp -o %<"
-        elseif &filetype == "ruby"
-            exec "!ruby %<.rb"
-        elseif &filetype == "sh"
-            exec "!bash %<.sh"
-        endif
-endfunc
