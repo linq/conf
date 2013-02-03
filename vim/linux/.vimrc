@@ -1,82 +1,48 @@
-" -----------------   Author: Ruchee
-" -----------------    Email: my@ruchee.com
-" -----------------  WebSite: http://www.ruchee.com
-" -----------------     Date: 2012-10-07
-" -----------------           For Linux and Cygwin
-
-
-" Ctrl + H                   --光标移当前行行首       [插入模式]
-" Ctrl + J                   --光标移下一行行首       [插入模式]
-" Ctrl + K                   --光标移上一行行尾       [插入模式]
-" Ctrl + L                   --光标移当前行行尾       [插入模式]
-" Ctrl + C                   --单源文件编译           [已配置 C/C++]
-" Ctrl + R                   --单源文件运行           [已配置 C/C++ Ruby Bash]
-" Ctrl + ]                   --转到函数定义
-" Ctrl + T                   --返回调用函数
-" Ctrl + E                   --一步加载语法模板和作者、时间信息
-" ESC  + H                   --Normal模式下开启Devhelp查询功能
-
+" -----------------   Author: LinQ
+" -----------------   Email: fancylinq@163.com
+"
+"
+" ---------------- 快捷键快速查询 ------------------
+"
 " <C-P>                      --关键字补全
 " <C-X><C-L>                 --整行补全
 " <C-X><C-O>                 --全能补全
-" Tab键                      --插入模式下语法结构补全 [snipMate插件]
-" Shift + Insert             --向Vim中粘贴从别处复制的内容
-
-" u [小写]                   --单步复原               [非插入模式]
-" U [大写]                   --整行复原               [非插入模式]
-
-" jj                         --保存文件并留在插入模式 [插入模式]
-" kk                         --返回Normal模式         [插入模式]
-" nt                         --打开NERDTree           [非插入模式]
-" tl                         --打开TagList            [非插入模式]
-
 " za                         --打开或关闭当前折叠
 " zM                         --关闭所有折叠
 " zR                         --打开所有折叠
-
-" :se ft=cpp                 --手动选择语法高亮       [:set filetype=cpp 或 :set syntax=cpp 亦可]
-
-" :%!xxd                     --转储二进制文件，以十六进制形式显示
-" :%!xxd -r                  --还原二进制文件
-
-
-" ---------- 主要插件详细用法说明 ---------------------
-
-" :Tlist                     --呼出变量和函数列表     [TagList插件]
-" :LoadTemplate              --呼出语法模板           [Load_Template插件]
-" :AuthorInfoDetect          --添加作者、时间等信息   [NERD_commenter && authorinfo插件]
-
-" ---------- snipMate [全局可用的补全关键字] ----------
-"
-" cprt                       --插入版权信息           [助记：copyright]
-" date                       --插入当前时间
-" fiok                       --插入文件的最后修改时间 [助记：file ok]
-" desc                       --插入文件描述           [助记：description]
-" 更多关键字可自行查看vimfiles/snippets下的各个文件   [Linux下为~/.vim/snippets]
-
-" ---------- a.vim [自动切换C/C++同名头文件] ----------
-"
-" :A                         --切换同名头文件并独占整个屏幕
-" :AS                        --切换同名头文件并垂直分屏，头文件在上
-" :AV                        --切换同名头文件并水平分割，头文件在左
-
-" ---------- NERDTree [智能文件浏览器] ----------------
-"
 " :NERDTree                  --启动NERDTree插件
-" o [小写]                   --切换当前文件或目录的打开、关闭状态
-" u                          --打开上层目录
-" p [小写]                   --返回上层目录
-" P [大写]                   --返回根目录
-" K                          --转到当前目录第一个节点
-" J                          --转到当前目录最后的节点
-" m                          --显示文件系统菜单       [增、删、移]
-" ?                          --弹出帮助菜单
-" q                          --退出该插件
 
-au FileType c set makeprg=gcc\ %
+" ---------------- Vundle配置 ----------------
+set nocompatible               " be iMproved
+filetype off                   " required!
 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-colorscheme desert          " 着色模式：黄色和粉红色为主
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+Bundle 'taglist.vim'
+Bundle 'bufexplorer.zip'
+Bundle 'snipMate'
+Bundle 'Mark--Karkat'
+Bundle 'The-NERD-Commenter'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'TxtBrowser'
+Bundle 'FencView.vim'
+Bundle 'The-NERD-tree'
+Bundle 'code_complete'
+Bundle 'winmanager'
+Bundle 'OmniCppComplete'
+Bundle 'asins/vimcdoc'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'desert-warm-256'
+
+filetype plugin indent on    " required!
+
+colorscheme desert-warm-256  " desert256, 终端与gvim颜色相近
 set guifont=Monaco\ 10       " 字体 && 字号
 set backspace=2              " 设置退格键可用
 set autoindent               " 自动对齐
@@ -90,7 +56,6 @@ set ruler                    " 右下角显示光标位置的状态行
 set incsearch                " 开启实时搜索功能
 set hlsearch                 " 开启高亮显示结果
 set nowrapscan               " 搜索到文件两端时不重新搜索
-set nocompatible             " 关闭兼容模式
 set vb t_vb=                 " 关闭提示音
 au GuiEnter * set t_vb=
 set hidden                   " 允许在有未保存的修改时切换缓冲区
@@ -108,12 +73,12 @@ set nobackup
 set listchars=tab:\|\ ,
 set tabstop=2                " 设置Tab键的宽度        [等同的空格个数]
 set expandtab                " 将Tab自动转化成空格    [需要输入真正的Tab键时，使用 Ctrl+V + Tab]
+set helplang=cn              " 加载中文帮助
 
 syntax enable                " 打开语法高亮
 syntax on                    " 开启文件类型侦测
 filetype indent on           " 针对不同的文件类型采用不同的缩进格式
 filetype plugin on           " 针对不同的文件类型加载对应的插件
-filetype plugin indent on    " 启用自动补全
 
 " 每行超过80个的字符用下划线标示
 au BufRead,BufNewFile *.s,*.c,*.cpp,*.h,*.cl,*.rb,*.sql,*.sh,*.vim,*.js,*.css,*.html 2match Underlined /.\%81v/
@@ -135,56 +100,3 @@ if has("gui_running")
     set guioptions-=b       " 隐藏底部滚动条
     set showtabline=0       " 隐藏Tab栏
 endif
-
-
-" ======= 引号 && 括号自动匹配 ======= "
-
-:inoremap ( ()<ESC>i
-
-:inoremap ) <c-r>=ClosePair(')')<CR>
-
-:inoremap { {}<ESC>i
-
-:inoremap } <c-r>=ClosePair('}')<CR>
-
-:inoremap [ []<ESC>i
-
-:inoremap ] <c-r>=ClosePair(']')<CR>
-
-:inoremap " ""<ESC>i
-
-:inoremap ' ''<ESC>i
-
-:inoremap ` ``<ESC>i
-
-function ClosePair(char)
-    if getline('.')[col('.') - 1] == a:char
-       return "\<Right>"
-    else
-       return a:char
-    endif
-endf
-
-
-" ESC + H             Normal模式下开启Devhelp查询功能
-function! DevHelpCurrentWord()
-        let word = expand("<cword>")
-        exe "!devhelp -s " . word . " &"
-endfunction
-"nmap <esc>h :call DevHelpCurrentWord()<CR>
-
-" MiniBufExplorer     多个文件切换 可使用鼠标双击相应文件名进行切换
-let g:miniBufExplMapWindowNavVim=1
-let g:miniBufExplMapWindowNavArrows=1
-let g:miniBufExplMapCTabSwitchBufs=1
-let g:miniBufExplModSelTarget=1
-let g:miniBufExplorerMoreThanOne=0
-
-" :Tlist              调用TagList
-let Tlist_Show_One_File=1                    " 只显示当前文件的tags
-let Tlist_Exit_OnlyWindow=1                  " 如果Taglist窗口是最后一个窗口则退出Vim
-let Tlist_Use_Right_Window=1                 " 在右侧窗口中显示
-let Tlist_File_Fold_Auto_Close=1             " 自动折叠
-
-" :LoadTemplate       根据文件类型自动加载模板
-let g:template_path='~/.vim/template/'
