@@ -1,13 +1,16 @@
-# Filename completion/expansion
-set completion-ignore-case on
+$include /etc/inputrc
 
-# Ask before displaying >50 items
-# Since $WINDIR $PATH var can be in $PATH, this could list
-# all window exectables in C:\WINDOWS
-set completion-query-items 50
+"\e[A":history-search-backward
+"\e[B":history-search-forward
+
+set completion-ignore-case on
 
 # visible-stats
 # Append a mark according to the file type in a listing
 set visible-stats on
+set mark-directories on
 
-set bell-style none
+# Show all instead of beeping first
+set show-all-if-ambiguous off
+
+set completion-query-items 50
