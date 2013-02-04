@@ -41,7 +41,7 @@ Bundle 'TxtBrowser'
 Bundle 'FencView.vim'
 Bundle 'The-NERD-tree'
 Bundle 'winmanager'
-Bundle 'TabBar'
+Bundle 'fholgado/minibufexpl.vim'
 " Programming
 Bundle 'The-NERD-Commenter'
 Bundle 'Mark--Karkat'
@@ -131,3 +131,10 @@ let Tlist_Show_One_File=1 " 只显示当前文件的tags
 let Tlist_Exit_OnlyWindow=1 " 如果Taglist窗口是最后一个窗口则退出Vim
 let Tlist_Use_Right_Window=1 " 在右侧窗口中显示
 let Tlist_File_Fold_Auto_Close=1 " 自动折叠
+
+
+" ---------------------------- MiniBufExplorer -------------------------
+" 开启Tab切换 
+let g:miniBufExplMapCTabSwitchBufs = 1
+" for taglist
+let g:miniBufExplModSelTarget = 1
