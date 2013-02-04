@@ -2,7 +2,7 @@
 " -----------------   Email: fancylinq@163.com
 "
 "
-" ---------------- 快捷键快速查询 ------------------
+" ---------------------------- 快捷键快速查询 -------------------------
 "
 " <C-P>                      --关键字补全
 " <C-X><C-L>                 --整行补全
@@ -12,15 +12,18 @@
 " zR                         --打开所有折叠
 " :NERDTree                  --启动NERDTree插件
 
-" ---------------- Vundle配置 ----------------
+" ---------------------------- Vundle配置 -----------------------------
 set nocompatible               " be iMproved
 filetype off                   " required!
+" 解决windows加载问题
+if has('win32') || has('win64')
+  set rtp+=$VIM/vimfiles/bundle/vundle/
+  call vundle#rc('$VIM/vimfiles/bundle')
+else
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#rc()
+endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required! 
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
@@ -50,6 +53,8 @@ Bundle 'asins/vimcdoc'
 Bundle 'plasticboy/vim-markdown'
 
 filetype plugin indent on    " required!
+
+" ------------------------ 通用设置 ------------------------
 
 colorscheme desert-warm-256  " desert256, 终端与gvim颜色相近
 set guifont=Monaco\ 10       " 字体 && 字号
@@ -99,20 +104,25 @@ set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
 
 if has("gui_running")
-    winpos 235 235            " 指定窗口出现的位置，坐标原点在屏幕左上角
-    set lines=30 columns=150 " 指定窗口大小，lines为高度，columns为宽度
-    set guioptions-=m       " 隐藏菜单栏
+  winpos 235 235            " 指定窗口出现的位置，坐标原点在屏幕左上角
+  set lines=30 columns=150 " 指定窗口大小，lines为高度，columns为宽度
+  set guioptions-=m       " 隐藏菜单栏
 
-    set guioptions-=T        " 隐藏工具栏
-    set guioptions-=L       " 隐藏左侧滚动条
-    set guioptions-=r       " 隐藏右侧滚动条
-    set guioptions-=b       " 隐藏底部滚动条
-    set showtabline=0       " 隐藏Tab栏
+  set guioptions-=T        " 隐藏工具栏
+  set guioptions-=L       " 隐藏左侧滚动条
+  set guioptions-=r       " 隐藏右侧滚动条
+  set guioptions-=b       " 隐藏底部滚动条
+  set showtabline=0       " 隐藏Tab栏
 endif
-" 解决菜单乱码
-if has("win32")
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
+
+" ---------------------------- windows特殊设置-------------------------
+if has('win32') || has('win64')
+  set guifont=Monaco:h10
+  " 解决菜单乱码
+  source $VIMRUNTIME/delmenu.vim
+  source $VIMRUNTIME/menu.vim
+  " 解决consle输出乱码
+  language messages zh_CN.utf-8
 endif
 
 
