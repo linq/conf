@@ -4,7 +4,20 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+# export
 export TERM=xterm-256color
+export HISTCONTROL=ignoredups
+export HISTCONTROL=ignorespace
+export EDITOR=vi
+export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
+
+# alias
+alias ls='ls --color=auto'
+alias vi="vim"
+
+
+PS1='\[\e[1;31m\][\[\e[m\]\[\e[1;34m\]\w\[\e[m\]\[\e[1;31m\]]\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 
 # color man page
 man() {
@@ -18,11 +31,3 @@ man() {
 		LESS_TERMCAP_us=$(printf "\e[1;32m") \
 			man "$@"
 }
-
-alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
-
-export HISTCONTROL=ignoredups
-export HISTCONTROL=ignorespace
-
-PS1='\[\e[1;31m\][\[\e[m\]\[\e[1;34m\]\w\[\e[m\]\[\e[1;31m\]]\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
