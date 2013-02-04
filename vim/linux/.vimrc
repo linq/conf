@@ -24,21 +24,30 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
+" Colorscheme
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'desert-warm-256'
+" snipmate
+Bundle 'gmarik/snipmate.vim'
+Bundle 'honza/snipmate-snippets'
+" ui
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'taglist.vim'
 Bundle 'bufexplorer.zip'
-Bundle 'snipMate'
-Bundle 'Mark--Karkat'
-Bundle 'The-NERD-Commenter'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'TxtBrowser'
 Bundle 'FencView.vim'
 Bundle 'The-NERD-tree'
-Bundle 'code_complete'
 Bundle 'winmanager'
-Bundle 'OmniCppComplete'
+Bundle 'TabBar'
+" Programming
+Bundle 'The-NERD-Commenter'
+Bundle 'Mark--Karkat'
+Bundle 'echofunc.vim'
+Bundle 'a.vim'
+" doc
 Bundle 'asins/vimcdoc'
+" Syntax highlight
 Bundle 'plasticboy/vim-markdown'
-Bundle 'desert-warm-256'
 
 filetype plugin indent on    " required!
 
@@ -99,6 +108,11 @@ if has("gui_running")
     set guioptions-=r       " 隐藏右侧滚动条
     set guioptions-=b       " 隐藏底部滚动条
     set showtabline=0       " 隐藏Tab栏
+endif
+" 解决菜单乱码
+if has("win32")
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
 endif
 
 
