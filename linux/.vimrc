@@ -47,6 +47,7 @@ Bundle 'The-NERD-Commenter'
 Bundle 'Mark--Karkat'
 Bundle 'echofunc.vim'
 Bundle 'a.vim'
+Bundle 'Auto-Pairs'
 " doc
 Bundle 'asins/vimcdoc'
 " Syntax highlight

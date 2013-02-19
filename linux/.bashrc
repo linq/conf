@@ -17,7 +17,7 @@ alias ls='ls --color=auto'
 alias vi="vim"
 
 
-PS1='\[\e[1;31m\][\[\e[m\]\[\e[1;34m\]\w\[\e[m\]\[\e[1;31m\]]\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
+PS1='\[\e[1;31m\][\[\e[m\]\[\e[1;34m\]\w\[\e[m\]\[\e[1;31m\]]\[\e[m\] \[\e[1;32m\]\$\[\e[m\] '
 
 # color man page
 man() {
