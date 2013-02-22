@@ -139,3 +139,6 @@ let Tlist_File_Fold_Auto_Close=1 " 自动折叠
 let g:miniBufExplMapCTabSwitchBufs = 1
 " for taglist
 let g:miniBufExplModSelTarget = 1
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplorerMoreThanOne=0
