@@ -1,5 +1,9 @@
+"显示导航栏和书签栏
 set go+=BT
+"还原GoogleReader映射快捷键
 set passkeys=www\.google\.com/reader/:jkovAa
-noremap y Y
-noremap Y y
+"替换默认Y和y的功能
+map -builtin y Y
+map -builtin Y y
+"使用solarized-light
 colorscheme solarized-light

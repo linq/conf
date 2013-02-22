@@ -41,7 +41,7 @@ Bundle 'TxtBrowser'
 Bundle 'FencView.vim'
 Bundle 'The-NERD-tree'
 Bundle 'winmanager'
-Bundle 'fholgado/minibufexpl.vim'
+Bundle 'linq/minibufexpl.vim'
 " Programming
 Bundle 'The-NERD-Commenter'
 Bundle 'Mark--Karkat'
@@ -141,4 +141,4 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplorerMoreThanOne=0
+"let g:miniBufExplorerMoreThanOne=0
