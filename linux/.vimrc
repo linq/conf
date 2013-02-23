@@ -51,6 +51,7 @@ Bundle 'Auto-Pairs'
 " doc
 Bundle 'asins/vimcdoc'
 " Syntax highlight
+Bundle 'linq/vim.syntax'
 Bundle 'plasticboy/vim-markdown'
 
 filetype plugin indent on    " required!
@@ -141,4 +142,3 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
-"let g:miniBufExplorerMoreThanOne=0
