@@ -35,7 +35,6 @@ Bundle 'gmarik/snipmate.vim'
 Bundle 'honza/snipmate-snippets'
 " ui
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'taglist.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'TxtBrowser'
 Bundle 'FencView.vim'
@@ -43,11 +42,14 @@ Bundle 'The-NERD-tree'
 Bundle 'winmanager'
 Bundle 'linq/minibufexpl.vim'
 " Programming
+Bundle 'taglist.vim'
+Bundle 'Tagbar'
 Bundle 'The-NERD-Commenter'
 Bundle 'Mark--Karkat'
 Bundle 'echofunc.vim'
 Bundle 'a.vim'
 Bundle 'Auto-Pairs'
+Bundle 'ervandew/supertab'
 " doc
 Bundle 'asins/vimcdoc'
 " Syntax highlight
