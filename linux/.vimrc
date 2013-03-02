@@ -29,7 +29,7 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 " Colorscheme
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'desert-warm-256'
+Bundle 'rainux/vim-desert-warm-256'
 " snipmate
 Bundle 'gmarik/snipmate.vim'
 Bundle 'honza/snipmate-snippets'
