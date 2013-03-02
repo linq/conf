@@ -6,6 +6,8 @@
 "
 " <C-P>                      --关键字补全
 " <C-X><C-L>                 --整行补全
+" <C-X><C-F>                 --文件名补全
+" <C-X><C-K>                 --字典补全
 " <C-X><C-O>                 --全能补全
 " za                         --打开或关闭当前折叠
 " zM                         --关闭所有折叠
@@ -31,8 +33,10 @@ Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'rainux/vim-desert-warm-256'
 " snipmate
-Bundle 'gmarik/snipmate.vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
 Bundle 'honza/snipmate-snippets'
+Bundle 'garbas/vim-snipmate'
 " ui
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'bufexplorer.zip'
@@ -49,7 +53,8 @@ Bundle 'Mark--Karkat'
 Bundle 'echofunc.vim'
 Bundle 'a.vim'
 Bundle 'Auto-Pairs'
-Bundle 'ervandew/supertab'
+"Bundle 'ervandew/supertab'
+"Bundle 'Shougo/neocomplcache'
 " doc
 Bundle 'asins/vimcdoc'
 " Syntax highlight
