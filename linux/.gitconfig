@@ -1,0 +1,12 @@
+[user]
+	email = fancylinq@163.com
+	name = fancylinq
+[push]
+	default = simple
+[color]
+	ui = true
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
