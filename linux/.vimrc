@@ -58,8 +58,9 @@ Bundle 'Auto-Pairs'
 " doc
 Bundle 'asins/vimcdoc'
 " Syntax highlight
-Bundle 'linq/vim.syntax'
+Bundle 'jakar/vim-json'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'linq/vim.syntax'
 
 filetype plugin indent on    " required!
 
