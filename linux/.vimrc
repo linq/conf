@@ -47,6 +47,7 @@ Bundle 'winmanager'
 Bundle 'linq/minibufexpl.vim'
 " Programming
 Bundle 'taglist.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Tagbar'
 Bundle 'The-NERD-Commenter'
 Bundle 'Mark--Karkat'
@@ -61,6 +62,8 @@ Bundle 'asins/vimcdoc'
 Bundle 'jakar/vim-json'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'linq/vim.syntax'
+"Bundle 'martintreurnicht/vim-gradle'
+Bundle 'Yggdroot/indentLine'
 
 filetype plugin indent on    " required!
 
