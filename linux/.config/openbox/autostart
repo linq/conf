@@ -15,6 +15,7 @@
 # If you want to use XFCE config tools...
 #
 #xfce-mcs-manager &
-feh --bg-scale /usr/share/archlinux/wallpaper/tapek.jpg &
+feh --bg-scale /usr/share/archlinux/wallpaper/12031520353196.jpg &
 tint2 &
 fcitx &
+conky &
